@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de CSS - Estilos Variados</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fuentes personalizadas */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:wght@700&family=Courier+Prime&display=swap');
+
+        body {
+            font-family: 'Courier Prime', monospace;
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 50%, #6c5b7b 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header con Flexbox */
+        header {
+            background-color: #00ff9f;
+            color: #1a001a;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            text-shadow: 3px 3px 0 #ff00ff;
+            letter-spacing: 5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: #1a001a;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            background-color: #ffff00;
+            border: 3px solid #ff00ff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ff00ff;
+            color: #ffff00;
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Contenedor principal con Grid */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        /* Sección Hero con gradiente */
+        .hero {
+            background: linear-gradient(45deg, #ff0080, #00ff80, #0080ff, #ff8000);
+            background-size: 400% 400%;
+            animation: gradientShift 5s ease infinite;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border: 5px dashed #ffff00;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero h2 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        /* Grid de tarjetas */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background-color: #ff6b35;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 5px solid #004e89;
+            box-shadow: 10px 10px 0 #00ff9f;
+            transition: transform 0.3s ease;
+        }
+
+        .card:nth-child(2) {
+            background-color: #00e5ff;
+            color: #1a001a;
+        }
+
+        .card:nth-child(3) {
+            background-color: #ffeb3b;
+            color: #1a001a;
+        }
+
+        .card:nth-child(4) {
+            background-color: #9c27b0;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(2deg);
+        }
+
+        .card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-decoration: underline wavy;
+        }
+
+        /* Sección con Flexbox */
+        .flex-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .flex-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: #ff4081;
+            padding: 1.5rem;
+            border: 3px dotted #00bcd4;
+            border-radius: 5px;
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .flex-item:nth-child(odd) {
+            background-color: #7c4dff;
+        }
+
+        /* Grid complejo */
+        .grid-complex {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .grid-item {
+            background-color: #ff5722;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: 3px solid #3f51b5;
+            border-radius: 10px;
+        }
+
+        .grid-item:nth-child(1) {
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+            background-color: #4caf50;
+        }
+
+        .grid-item:nth-child(2) {
+            grid-column: 3 / 5;
+            grid-row: 1 / 3;
+            background-color: #f44336;
+        }
+
+        .grid-item:nth-child(3) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+            background-color: #2196f3;
+        }
+
+        .grid-item:nth-child(4) {
+            grid-column: 2 / 4;
+            grid-row: 2 / 3;
+            background-color: #ff9800;
+        }
+
+        .grid-item:nth-child(5) {
+            grid-column: 2 / 5;
+            grid-row: 3 / 4;
+            background-color: #9c27b0;
+        }
+
+        /* Footer con flexbox */
+        footer {
+            background-color: #1a001a;
+            color: #00ff9f;
+            padding: 2rem;
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            border-top: 5px solid #ff00ff;
+        }
+
+        footer div {
+            background-color: #ff00ff;
+            color: #ffff00;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 0.5rem;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2rem;
+        }
+
+        /* Efectos adicionales */
+        .animated-text {
+            animation: colorChange 3s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { color: #ff0000; }
+            25% { color: #00ff00; }
+            50% { color: #0000ff; }
+            75% { color: #ffff00; }
+            100% { color: #ff0000; }
+        }
+
+        .rotating-box {
+            width: 100px;
+            height: 100px;
+            background-color: #ff1744;
+            margin: 2rem auto;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .grid-complex {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .grid-item {
+                grid-column: 1 !important;
+                grid-row: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header con Flexbox -->
+    <header>
+        <h1>CSS DEMO</h1>
+        <nav>
+            <a href="#home">Inicio</a>
+            <a href="#about">Acerca</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="animated-text">¡Bienvenido a la Demostración de CSS!</h2>
+            <p>Aquí verás Grid, Flexbox, colores, fuentes y mucho más...</p>
+        </section>
+
+        <!-- Grid de tarjetas -->
+        <h2 style="font-family: 'Bebas Neue', cursive; font-size: 2.5rem; margin: 2rem 0; text-shadow: 3px 3px 0 #000;">
+            Grid de Tarjetas
+        </h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Tarjeta 1</h3>
+                <p>Esta tarjeta usa colores brillantes y bordes sólidos para demostrar estilos CSS básicos.</p>
+            </div>
+            <div class="card">
+                <h3>Tarjeta 2</h3>
+                <p>Cada tarjeta tiene un color diferente usando nth-child selector.</p>
+            </div>
+            <div class="card">
+                <h3>Tarjeta 3</h3>
+                <p>Las sombras y transformaciones hacen que las tarjetas sean interactivas.</p>
+            </div>
+            <div class="card">
+                <h3>Tarjeta 4</h3>
+                <p>El grid se ajusta automáticamente con auto-fit y minmax.</p>
+            </div>
+        </div>
+
+        <!-- Caja rotando -->
+        <div class="rotating-box"></div>
+
+        <!-- Sección Flexbox -->
+        <h2 style="font-family: 'Bebas Neue', cursive; font-size: 2.5rem; margin: 2rem 0; text-shadow: 3px 3px 0 #000;">
+            Sección con Flexbox
+        </h2>
+        <div class="flex-section">
+            <div class="flex-item">Item Flex 1</div>
+            <div class="flex-item">Item Flex 2</div>
+            <div class="flex-item">Item Flex 3</div>
+            <div class="flex-item">Item Flex 4</div>
+        </div>
+
+        <!-- Grid complejo -->
+        <h2 style="font-family: 'Bebas Neue', cursive; font-size: 2.5rem; margin: 2rem 0; text-shadow: 3px 3px 0 #000;">
+            Grid Complejo con Áreas
+        </h2>
+        <div class="grid-complex">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div>Sección 1</div>
+        <div>Sección 2</div>
+        <div>Sección 3</div>
+    </footer>
+</body>
+</html>

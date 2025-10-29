@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Practica de Imagenes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, Imagenes">
+    <meta name="author" content="Juan Munizaga">
+    <title>Practica de Imagenes</title>
+    <link rel="icon" href="../Img/Pikachu.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Práctica de Imágenes</h1>
+    </header>
+
+    <section>
+        <h2>Navegación</h2>
+        <nav aria-label="Menú principal">
+            <a href="practica-texto.html">Texto</a>
+            <a href="practica-imagenes.html">Imagenes</a>
+            <a href="practica-listas.html">Listas</a>
+            <a href="practica-tablas.html">Tablas</a>
+            <a href="practica-formulario.html">Formulario</a>
+            <a href="practica-formulario-2.html">Formulario 2</a>
+            <a href="practica-controles.html">Controles</a>
+            <a href="practica-audio.html">Audio</a>
+            <a href="practica-video.html">Video</a>
+            <a href="practica-css.html">CSS</a>
+            <a href="practica-menu-horizontal.html">Menu Horizontal</a>
+            <a href="practica-menu-vertical.html">Menu Vertical</a>
+            <a href="practica-js.html">JavaScript</a>
+            <a href="practica-copypaste.html">CopyPaste</a>
+            <a href="practica-builder-gsite.html">Builder GSite</a>
+            <a href="practica-builder-canva.html">Builder Canva</a>
+            <a href="practica-ia.html">IA</a>
+            <a href="practica-crazy.html">Crazy</a>
+        </nav>
+    </section>
+
+    <main>
+        <p><a href="../index.html">Volver al menú principal</a></p>
+
+        <section>
+            <h2>Video (iframe de YouTube) - insertado</h2>
+            <!-- Iframe más pequeño -->
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/74azZY2ZnqU"
+                    title="Regalame Una Noche - Maelo Ruiz feat. Norberto Vélez (Live Sesiones Desde La Loma)"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <h2>Imagen (fuente externa)</h2>
+            <!-- Imagen con mapa (fuente externa) -->
+            <figure>
+                <img src="https://www.masterdatascienceucm.com/wp-content/uploads/2020/12/que-es-machine-learning.jpg.webp"
+                     alt="Artículo: Qué es Machine Learning"
+                     usemap="#mlmap"
+                     width="800" />
+                <figcaption>Imagen externa. Fuente: <a href="https://www.masterdatascienceucm.com/que-es-machine-learning/" target="_blank" rel="noopener">masterdatascienceucm</a></figcaption>
+            </figure>
+
+            <h3>Mapa de imagen</h3>
+            <!-- Mapa de imagen; el área cubre la imagen entera y enlaza al artículo -->
+            <map name="mlmap" id="mlmap">
+                <!-- Ajusta coords según el tamaño real de la imagen si quieres áreas más precisas -->
+                <area shape="rect" coords="0,0,800,450"
+                      href="https://www.masterdatascienceucm.com/que-es-machine-learning/"
+                      alt="Ir al artículo sobre Machine Learning"
+                      target="_blank" rel="noopener" />
+            </map>
+        </section>
+
+        <section>
+            <h2>Imagen (fuente interna)</h2>
+            <!-- Ejemplo de imagen interna (ruta relativa) -->
+            <figure>
+                <img src="../Img/Pikachu.ico" alt="Icono local Pikachu" width="128" height="128" />
+                <figcaption>Imagen interna (archivo local)</figcaption>
+            </figure>
+        </section>
+        <section>
+        <h2>Imagen responsive: demostración</h2>
+        <figure>
+            <!-- Reemplaza los nombres de archivo por los que tienes en ../Img/ -->
+            <picture>
+                <!-- versión grande para pantallas anchas -->
+                <source media="(min-width:1200px)" srcset="../Img/images.jpg">
+                <!-- versión mediana para tablets / pantallas intermedias -->
+                <source media="(min-width:768px)" srcset="../Img/images.png">
+                <!-- versión pequeña para móviles -->
+                <source media="(max-width:767px)" srcset="../Img/ncEQ9B1J_400x400.png">
+                <!-- fallback -->
+                <img src="../Img/imagen-pequena.jpg"
+                    alt="Demostración: imagen responsive que cambia según tamaño de pantalla"
+                    style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto;"
+                    loading="lazy">
+            </picture>
+            <figcaption><strong>Título:</strong> Imagen responsive que cambia según el tamaño de pantalla</figcaption>
+        </figure>
+        </section>
+
+    </main>
+
+    <!-- ========== Pie de página ========== -->
+    <hr>
+    <footer>
+        <p>Desarrollado por: Juan Munizaga</p>
+        <p>
+            <a href="mailto:juanmuni@espol.edu.ec">Correo</a> |
+            <a href="tel:+593984482662">Celular</a>
+        </p>
+        <p>© 2025 - Página de prácticas académicas | ESPOL</p>
+    </footer>
+</body>
+</html>

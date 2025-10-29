@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Practica de CSS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Juan Munizaga">
+    <title>Practica de CSS</title>
+    <link rel="icon" href="../Img/Pikachu.ico" type="image/x-icon">
+
+    <!-- Estilos de demostración (pequeña guía) -->
+    <style>
+        /* Selector de elemento */
+        p { color: #222; line-height: 1.5; }
+
+        /* Selector de clase */
+        .resaltado { background: #fffbcc; padding: 6px; border-left: 4px solid #f0c000; }
+
+        /* Selector de id */
+        #titulo-ejemplo { font-family: Arial, sans-serif; color: #0a58ca; }
+
+        /* Selector de atributo */
+        input[type="text"] { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+
+        /* Selector descendiente */
+        nav a { text-decoration: none; color: inherit; margin-right: 8px; }
+
+        /* Pseudo-clase */
+        a:hover { color: #d63384; }
+
+        /* Pseudo-elemento */
+        .nota::before { content: "Nota: "; font-weight: bold; color: #6c757d; }
+
+        /* Agrupación de selectores */
+        h2, h3 { margin-top: 1.2rem; color: #333; }
+
+        /* Modelo de caja: margin, border, padding, width */
+        .caja { width: 200px; padding: 10px; border: 1px solid #ddd; margin: 8px 0; }
+
+        /* Display y layout básicos */
+        .fila { display: flex; gap: 10px; }
+        .col { flex: 1; background: #f8f9fa; padding: 10px; border-radius: 4px; }
+
+        /* Posicionamiento */
+        .fijo { position: fixed; bottom: 12px; right: 12px; background: #0d6efd; color: white; padding: 8px 12px; border-radius: 6px; }
+
+        /* Media query (responsivo) */
+        @media (max-width: 600px) {
+            .fila { flex-direction: column; }
+            nav { font-size: 14px; }
+        }
+
+        /* Comentario: puedes añadir más propiedades como color, font-size, background, box-shadow, transform, transition, etc. */
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="practica-texto.html">Texto</a>
+        <a href="practica-imagenes.html">Imagenes</a>
+        <a href="practica-listas.html">Listas</a>
+        <a href="practica-tablas.html">Tablas</a>
+        <a href="practica-formulario.html">Formulario</a>
+        <a href="practica-formulario-2.html">Formulario 2</a>
+        <a href="practica-controles.html">Controles</a>
+        <a href="practica-audio.html">Audio</a>
+        <a href="practica-video.html">Video</a>
+        <a href="practica-css.html">CSS</a>
+        <a href="practica-menu-horizontal.html">Menu Horizontal</a>
+        <a href="practica-menu-vertical.html">Menu Vertical</a>
+        <a href="practica-js.html">JavaScript</a>
+        <a href="practica-copypaste.html">CopyPaste</a>
+        <a href="practica-builder-gsite.html">Builder GSite</a>
+        <a href="practica-builder-canva.html">Builder Canva</a>
+        <a href="practica-ia.html">IA</a>
+        <a href="practica-crazy.html">Crazy</a>
+    </nav>
+    <main>
+        <h1 id="titulo-ejemplo">Práctica de CSS — Pequeña guía</h1>
+        <p><a href="../index.html">Volver al menú principal</a></p>
+
+        <!-- Contenido de la práctica aquí -->
+        <section>
+            <h2>¿Qué es CSS?</h2>
+            <p>CSS (Cascading Style Sheets) define el estilo visual de HTML: colores, tipografías, tamaño, layout y más.</p>
+        </section>
+
+        <section>
+            <h2>Selectores comunes y uso</h2>
+
+            <h3>Selector de elemento</h3>
+            <p class="resaltado">p { color: #222; }</p>
+            <pre><code>p { color: #222; }</code></pre>
+
+            <h3>Clase</h3>
+            <p class="resaltado">.resaltado { background: #fffbcc; }</p>
+            <pre><code>.resaltado { background: #fffbcc; padding: 6px; }</code></pre>
+
+            <h3>ID</h3>
+            <p id="ejemplo-id">#ejemplo-id { color: blue; }</p>
+            <pre><code>#ejemplo-id { color: blue; }</code></pre>
+
+            <h3>Atributo</h3>
+            <p>Input de texto:</p>
+            <input type="text" placeholder="ejemplo">
+            <pre><code>input[type="text"] { padding: 6px; }</code></pre>
+
+            <h3>Descendiente</h3>
+            <p>nav a { ... } aplica a enlaces dentro de nav.</p>
+            <pre><code>nav a { color: inherit; }</code></pre>
+
+            <h3>Pseudo-clases y pseudo-elementos</h3>
+            <p>Hover y contenido antes:</p>
+            <a href="#">Pasa el cursor</a>
+            <p class="nota">Ejemplo de pseudo-elemento</p>
+            <pre><code>a:hover { color: red; }
+/* .nota::before { content: "Nota: "; } */</code></pre>
+        </section>
+
+        <section>
+            <h2>Box model y layout</h2>
+            <div class="caja">Caja: width, padding, border, margin</div>
+            <pre><code>.caja { width:200px; padding:10px; border:1px solid #ddd; margin:8px; }</code></pre>
+
+            <h3>Flexbox básico</h3>
+            <div class="fila">
+                <div class="col">Col 1</div>
+                <div class="col">Col 2</div>
+            </div>
+            <pre><code>.fila { display:flex; gap:10px; }
+.col { flex:1; }</code></pre>
+        </section>
+
+        <section>
+            <h2>Responsividad</h2>
+            <p>Usa media queries para adaptar estilos a pantallas pequeñas.</p>
+            <pre><code>@media (max-width:600px) {
+  .fila { flex-direction: column; }
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>Consejos rápidos</h2>
+            <ul>
+                <li>Usa clases para estilos reutilizables.</li>
+                <li>No abuses de IDs para estilos (son específicos).</li>
+                <li>Organiza CSS por componentes o por secciones.</li>
+                <li>Usa herramientas como devtools para inspeccionar y probar cambios.</li>
+            </ul>
+        </section>
+
+        <p class="resaltado">Ejemplo práctico y modificable: edita el &lt;style&gt; en la cabecera para experimentar.</p>
+    </main>
+
+    <!-- ========== Pie de página ========== -->
+    <hr>
+    <footer>
+        <p>Desarrollado por: Juan Munizaga</p>
+        <p>
+            <a href="mailto:juanmuni@espol.edu.ec">Correo</a> |
+            <a href="tel:+593984482662">Celular</a>
+        </p>
+        <p>© 2025 - Página de prácticas académicas | ESPOL</p>
+    </footer>
+
+    <div class="fijo">Guía CSS</div>
+</body>
+</html>
